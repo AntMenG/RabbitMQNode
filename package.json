@@ -1,0 +1,41 @@
+{
+  "name": "rabbitmqnode",
+  "version": "0.0.1",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "dev": "grunt",
+    "start": "node app.js",
+    "test": "NODE_ENV=test mocha --recursive test",
+    "test:coverage": "nyc npm test",
+    "test:unit": "mocha --recursive test/middleware test/models test/routes",
+    "test:integration": "mocha --recursive test/integration"
+  },
+  "dependencies": {
+    "amqplib": "^0.5.5",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "glob": "^7.1.6",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.10",
+    "morgan": "^1.10.0",
+    "pug": "^2.0.4",
+    "serve-favicon": "^2.5.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "debug": "^2.2.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-develop": "^0.4.0",
+    "load-grunt-tasks": "^3.2.0",
+    "mocha": "^7.1.2",
+    "nyc": "^15.0.1",
+    "request": "^2.60.0",
+    "supertest": "^4.0.2",
+    "time-grunt": "^1.2.1"
+  }
+}

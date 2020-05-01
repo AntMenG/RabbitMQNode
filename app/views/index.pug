@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  ul#notificationList
+    - for (var i = 0; i < notifications.length; i++) {
+      li #{ notifications[i].text }
+    - }
+
+  script.
+    socket.on('message', function (message) {
+      message = JSON.parse(message);
+      const ul = document.getElementById('notificationList');
+      const li = document.createElement('li');
+      li.innerText = message.text;
+      ul.appendChild(li);
+    });
